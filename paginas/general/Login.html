@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión - The Rock Gym Center</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+
+        .login-container {
+            background-color: #505050;
+            padding: 25px;
+            border-radius: 2px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+            width: 325px;
+            text-align: center;
+        }
+
+        .user-icon {
+            background-color: #e71d23;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .user-icon svg {
+            fill: white;
+            width: 80px;
+            height: 80px;
+        }
+
+        .input-group {
+            position: relative;
+            margin-bottom: 15px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 10px 15px 10px 40px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .input-group i {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #777;
+            font-size: 18px;
+        }
+
+        .remember-me {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            color: white;
+        }
+
+        .remember-me input[type="checkbox"] {
+            margin-right: 5px;
+        }
+
+        .login-button {
+            background-color: #e71d23;
+            color: white;
+            padding: 11px 13px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+
+        .login-button:hover {
+            background-color: #c0161d;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+    
+    </style>
+    
+</head>
+
+<body>
+    
+    <img src="C:\Users\Usuario\Desktop\THE ROCK GYM CENTER INFERFACES\tgc.png"  margin-right: 100px; alt="Logo"  height="380" style="float: left;" >
+    <div class="login-container">
+        <div class="user-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+        </div>
+
+        <form action="/login" method="post">
+            <div class="input-group">
+                <i class="fa fa-envelope"></i><input type="text" id="username" name="username" placeholder="Usuario"
+                    required>
+            </div>
+            <div class="input-group">
+                <i class="fa fa-lock"></i><input type="password" id="password" name="password" placeholder="Contraseña"
+                    required>
+            </div>
+
+            <div class="remember-me">
+                <input type="checkbox" id="remember" name="remember">
+                <label for="remember">Recuérdame</label>
+            </div>
+
+            <button type="submit" class="login-button">Iniciar sesión</button>
+
+            <a href="#">Olvidé mi contraseña</a>            
+        </form>
+    </div>
+    
+</body>
+
+</html>
