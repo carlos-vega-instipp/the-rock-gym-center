@@ -143,3 +143,21 @@ exports.vendor = vendor;
 exports.build = build;
 exports.watch = watch;
 exports.default = build;
+
+document.getElementById("floatingAward").addEventListener("change", function() {
+  var selectedValue = this.value;
+  var priceSelect = document.getElementById("floatingPrice");
+
+  // Reset options
+  priceSelect.innerHTML = '<option value="" disabled selected>Precio</option>';
+
+  // Add the appropriate price based on the selected membership
+  if (selectedValue === "gold") {
+    priceSelect.innerHTML += '<option value="39.99">39.99</option>';
+  } else if (selectedValue === "silver") {
+    priceSelect.innerHTML += '<option value="29.99">29.99</option>';
+  } else if (selectedValue === "bronze") {
+    priceSelect.innerHTML += '<option value="19.99">19.99</option>';
+  }
+});
+
