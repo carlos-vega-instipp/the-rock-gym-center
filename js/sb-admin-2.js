@@ -54,3 +54,73 @@
   });
 
 })(jQuery); // End of use strict
+
+$(document).ready(function() {
+  // Abrir modal de edición
+  $('.edit-btn').on('click', function() {
+      var row = $(this).closest('tr');
+      var usuario = row.find('td:nth-child(1)').text();
+      var nombre = row.find('td:nth-child(2)').text();
+      var membresia = row.find('td:nth-child(3)').text();
+      var precio = row.find('td:nth-child(4)').text();
+      var pagado = row.find('td:nth-child(5)').text();
+      var fechaInicio = row.find('td:nth-child(6)').text();
+      var fechaFin = row.find('td:nth-child(7)').text();
+
+      // Rellenar los campos del formulario en el modal
+      $('#editUsuario').val(usuario);
+      $('#editNombre').val(nombre);
+      $('#editMembresia').val(membresia);
+      $('#editPrecio').val(precio);
+      $('#editFechaInicio').val(fechaInicio);
+      $('#editFechaFin').val(fechaFin);
+
+      // Mostrar el modal
+      $('#editModal').modal('show');
+  });
+
+  // Guardar cambios de la edición
+  $('#editForm').on('submit', function(e) {
+      e.preventDefault();
+
+      var usuario = $('#editUsuario').val();
+      var nombre = $('#editNombre').val();
+      var membresia = $('#editMembresia').val();
+      var precio = $('#editPrecio').val();
+      var fechaInicio = $('#editFechaInicio').val();
+      var fechaFin = $('#editFechaFin').val();
+
+      // Aquí puedes realizar una petición para guardar los cambios en el servidor
+
+      // Cerrar el modal
+      $('#editModal').modal('hide');
+
+      // Opcional: Actualizar la fila en la tabla (esto es solo si deseas hacerlo sin recargar)
+      var row = $("tr:contains('" + usuario + "')");
+      row.find('td:nth-child(2)').text(nombre);
+      row.find('td:nth-child(3)').text(membresia);
+      row.find('td:nth-child(4)').text(precio);
+      row.find('td:nth-child(6)').text(fechaInicio);
+      row.find('td:nth-child(7)').text(fechaFin);
+  });
+
+  // Abrir modal de confirmación de eliminación
+  $('.delete-btn').on('click', function() {
+      var row = $(this).closest('tr');
+      var usuario = row.find('td:nth-child(1)').text();
+
+      // Mostrar el modal de eliminación
+      $('#deleteModal').modal('show');
+
+      // Confirmar eliminación
+      $('#confirmDeleteBtn').on('click', function() {
+          // Aquí puedes realizar una petición para eliminar el registro en el servidor
+
+          // Eliminar la fila de la tabla
+          row.remove();
+
+          // Cerrar el modal
+          $('#deleteModal').modal('hide');
+      });
+  });
+});
