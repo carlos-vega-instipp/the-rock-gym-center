@@ -78,7 +78,7 @@
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="#">Membresias</a>
+                        <a class="collapse-item" href="membresias.html">Membresias</a>
                         <a class="collapse-item" href="Membresias-usuarios.html">Membresias/usuarios</a>
                     </div>
                 </div>
@@ -123,7 +123,7 @@
                 <div id="collapseIngre" class="collapse" aria-labelledby="headingIngre" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item" href="#">Ingresos</a>
-                        <a class="collapse-item" href="#">Detalles de Ingresos</a>
+                        <a class="collapse-item" href="">Detalles de Ingresos</a>
                     </div>
                 </div>
             </li>
@@ -235,28 +235,51 @@
                                             style="text-align: center; margin-bottom: 20px; font-family: Arial, sans-serif; color: #343a40;">
                                             Formulario de Registro</h2>
 
-                                        <!-- Nombre -->
+                                        <!-- Cliente -->
                                         <div class="form-floating mb-3">
                                             <input type="text" class="form-control" id="floatingNombre"
                                                 placeholder="Nombre" required>
-                                            <label for="floatingNombre">Precio</label>
+                                            <label for="floatingNombre">Cliente</label>
                                         </div>
 
-                                        <!-- Apellidos -->
+                                        <!-- Vendedor -->
                                         <div class="form-floating mb-3">
-                                            <input type="text" class="form-control" id="floatingApellidos"
-                                                placeholder="Apellidos" required>
-                                            <label for="floatingApellidos">Pagado</label>
+                                            <input type="text" class="form-control" id="floatingNombre"
+                                                placeholder="Nombre" required>
+                                            <label for="floatingNombre">Vendedor</label>
                                         </div>
 
-                                        <!-- Email -->
+                                        <!-- Producto -->
                                         <div class="form-floating mb-3">
-                                            <input type="email" class="form-control" id="floatingEmail"
-                                                placeholder="name@example.com" required>
+                                            <select class="form-select" id="floatingProducto" required>
+                                                <option value="" selected disabled>Seleccione un estado</option>
+                                                <option value="activo">Bebida Spore</option>
+                                                <option value="inactivo">Pesas de 5K</option>
+                                                <option value="inactivo">Camiseta Deportiva</option>
+                                                <option value="inactivo">Manuerda</option>
+                                            </select>
+                                            <label for="floatingEstado">Producto</label>
+                                        </div>
+
+
+                                        <!-- Pago -->
+                                        <div class="form-floating mb-3">
+                                            <select class="form-select" id="floatingEstado" required>
+                                                <option value="" selected disabled>Seleccione un estado</option>
+                                                <option value="activo">No Pagado</option>
+                                                <option value="inactivo">Pagado</option>
+                                            </select>
+                                            <label for="floatingEstado">Pago</label>
+                                        </div>
+
+                                        <!-- Fecha de Venta -->
+                                        <div class="form-floating mb-3">
+                                            <input type="date" class="form-control" id="floatingFechaventa"
+                                                placeholder="Fecha de Venta" required>
                                             <label for="floatingEmail">Fecha de Venta</label>
                                         </div>
 
-                                        <!-- Fecha de nacimiento -->
+                                        <!-- Fecha de Pago -->
                                         <div class="form-floating mb-3">
                                             <input type="date" class="form-control" id="floatingFechaNacimiento"
                                                 placeholder="Fecha de Nacimiento" required>
